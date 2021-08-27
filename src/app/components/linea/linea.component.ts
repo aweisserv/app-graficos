@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ChartDataSets, ChartOptions, ChartType } from 'chart.js';
 import { Color, BaseChartDirective, Label } from 'ng2-charts';
+import { Chart } from 'chart.js';
+
 
 @Component({
   selector: 'app-linea',
@@ -15,7 +17,6 @@ export class LineaComponent {
       { data: [90, 78, 77, 91, 98, 86, 94], label: 'Asados', yAxisID: 'y-axis-0' },
       { data: [81, 87, 85, 90, 79, 94, 90], label: 'Completos', yAxisID: 'y-axis-1' }
     ];
-
     public lineChartLabels: Label[] = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
     public lineChartOptions: (ChartOptions & { annotation: any }) = {
       responsive: true,
@@ -89,7 +90,7 @@ export class LineaComponent {
     public lineChartType: ChartType = 'line';
 
     
-    @ViewChild( BaseChartDirective, { static: true }) chart: BaseChartDirective;
+    @ViewChild( BaseChartDirective, { static: true }) chart!: BaseChartDirective;
 
     
     constructor( ) { 
@@ -125,18 +126,9 @@ export class LineaComponent {
       this.chart.hideDataset(1, !isHidden);
     }
   
-    public pushOne(): void {
-      this.lineChartData.forEach((x, i) => {
-        const num = this.generateNumber(i);
-        const data: number[] = x.data as number[];
-        data.push(num);
-      });
-      this.lineChartLabels.push(`Label ${this.lineChartLabels.length}`);
-    }
-  
-    public changeColor(): void {
-      this.lineChartColors[2].borderColor = 'green';
-      this.lineChartColors[2].backgroundColor = `rgba(0, 255, 0, 0.3)`;
+    public changeColor( label: number ): void {
+      this.lineChartColors[label].borderColor = 'green';
+      this.lineChartColors[label].backgroundColor = `rgba(0, 255, 0, 0.3)`;
     }
   
     public changeLabel(): void {
