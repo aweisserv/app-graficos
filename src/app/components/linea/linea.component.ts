@@ -1,7 +1,6 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { ChartDataSets, ChartOptions, ChartType } from 'chart.js';
 import { Color, BaseChartDirective, Label } from 'ng2-charts';
-import { Chart } from 'chart.js';
 
 
 @Component({
@@ -14,31 +13,17 @@ export class LineaComponent {
     public lineChartData: ChartDataSets[] = [
       { data: [65, 59, 80, 81, 56, 55, 40], label: 'Empanadas' },
       { data: [28, 48, 40, 19, 86, 27, 90], label: 'Pizzas' },
-      { data: [90, 78, 77, 91, 98, 86, 94], label: 'Asados', yAxisID: 'y-axis-0' },
-      { data: [81, 87, 85, 90, 79, 94, 90], label: 'Completos', yAxisID: 'y-axis-1' }
+      { data: [90, 78, 77, 91, 98, 86, 94], label: 'Asados' },
+      { data: [81, 87, 85, 90, 79, 94, 90], label: 'Completos' }
     ];
+
     public lineChartLabels: Label[] = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
     public lineChartOptions: (ChartOptions & { annotation: any }) = {
       responsive: true,
       scales: {
         // We use this empty structure as a placeholder for dynamic theming.
         xAxes: [{}],
-        yAxes: [
-          {
-            id: 'y-axis-0',
-            position: 'left',
-          },
-          {
-            id: 'y-axis-1',
-            position: 'right',
-            gridLines: {
-              color: 'rgba(255,0,0,0.3)',
-            },
-            ticks: {
-              fontColor: 'red',
-            }
-          }
-        ]
+        yAxes: [{}]
       },
       annotation: {
         annotations: [
