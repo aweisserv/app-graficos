@@ -1,0 +1,16 @@
+<div>
+    <div>
+      <div style="display: block">
+        <canvas baseChart
+          [datasets]="barChartData"
+          [labels]="barChartLabels"
+          [options]="barChartOptions"
+          [legend]="barChartLegend"
+          [chartType]="barChartType">
+        </canvas>
+      </div>
+      <div class="d-grid gap-2">
+        <button class="btn btn-outline-dark btn-block mb-5" (click)="randomize()">Click</button>
+      </div>
+    </div>
+  </div>
