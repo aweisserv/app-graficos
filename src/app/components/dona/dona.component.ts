@@ -30,4 +30,12 @@ export class DonaComponent implements OnInit {
     console.log(event, active);
   }
 
+  public randomize(){
+
+    this.doughnutChartData = [
+      [Math.round( Math.random() * 100), Math.round( Math.random() * 100), Math.round( Math.random() * 100)]/* ,
+      [350, 450, 100],*/
+    ];
+  }
+
 }
