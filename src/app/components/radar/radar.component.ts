@@ -14,7 +14,7 @@ export class RadarComponent implements OnInit {
   public radarChartOptions: RadialChartOptions = {
     responsive: true,
   };
-  public radarChartLabels: Label[] = ['Eating', 'Drinking', 'Sleeping', 'Designing', 'Coding', 'Cycling', 'Running'];
+  public radarChartLabels: Label[] = ['Hamburguesas', 'Completos', 'Asados', 'Pízzas', 'Sushi', 'Frituras', 'Dulces'];
 
   public radarChartData: ChartDataSets[] = [
     { data: [65, 59, 90, 81, 56, 55, 40], label: 'Series A' },
